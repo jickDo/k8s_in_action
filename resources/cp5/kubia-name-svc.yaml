@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+    - name: https
+      port: 443
+      targetPort: https
+
+# 이렇게 사용하면, 보고있는 컨테이너 포트의 네임인것에 매핑된다.k
