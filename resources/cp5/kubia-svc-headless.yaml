@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-headless
+spec:
+  clusterIP: None # 헤드리스 선언법
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: kubia
