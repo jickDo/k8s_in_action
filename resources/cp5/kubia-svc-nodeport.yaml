@@ -9,4 +9,4 @@ spec:
       targetPort: 8080 # 서비스 대상 파드의 포트
       nodePort: 30123 # 각 클러스터 노드의 포트 30123으로 서비스에 엑세스할수있다.
   selector:
-      app: kubi
+      app: kubia
