@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/gce-pd # pv 프로비저닝을 위해 사용되는 볼륨 플러그인
+parameters:
+  type: pd-ssd
+  zone: europe-west1-b # 이런 파라미터가 프로비저너로 전달된다.

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+spec:
+  capacity:
+    storage: 1Gi # 영속볼륨 사이즈를 지정한다.
+  accessModes: # 이 PV는 단일 클라이언트의 읽기/쓰기용(ReadWriteOnce)이나 여러 클라이언트를 위한 읽기 전용(ReadOnlyMany)으로 마운트 된다.
+    - ReadWriteOnce
+    - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Retain # 클레임이 해제된 후 퍼시스턴트 볼륨은 유지돼야 한다.
+  gcePersistentDisk: #이전에 생성해둔 GCE 퍼시스턴트 디스크를 기반으로 한다.
+    pdName: mongodb
+    fsType: ext4

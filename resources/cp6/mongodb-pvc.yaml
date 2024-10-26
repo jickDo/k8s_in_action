@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-pvc # 파드에서 볼륨요청시 이 이름사용
+spec:
+  resources:
+    requests:
+      storage: 1Gi #1GiB의 스토리지를 요구
+  accessModes:
+    - ReadWriteOnce #단일 클라이언트를 지원하는 스토리지 (읽기 쓰기 모두 가능)
+  storageClassName: "" # 이후 동적프로바이딩에서 설명
